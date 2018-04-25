@@ -68,6 +68,43 @@ while not hecho:
     # Primero, limpia la pantalla con blanco. No vayas a poner otros comandos de dibujo encima 
     # de esto, de otra forma serán borrados por este comando:
     pantalla.fill(BLANCO)
+
+    # Draw on the screen a VERDE line from (0,0) to (50.75) 
+    # 5 pixels wide.
+    pygame.draw.line(pantalla, VERDE, [0, 0], [50,30], 5)
+ 
+    # Draw on the screen a VERDE line from (0,0) to (50.75) 
+    # 5 pixels wide.
+    pygame.draw.lines(pantalla, NEGRO, False, [[0, 80], [50, 90], [200, 80], [220, 30]], 5)
+    
+    # Draw on the screen a VERDE line from (0,0) to (50.75) 
+    # 5 pixels wide.
+    pygame.draw.aaline(pantalla, VERDE, [0, 50],[50, 80], True)
+
+    # Draw a rectangle outline
+    pygame.draw.rect(pantalla, NEGRO, [75, 10, 50, 20], 2)
+     
+    # Draw a solid rectangle
+    pygame.draw.rect(pantalla, NEGRO, [150, 10, 50, 20])
+     
+    # Draw an ellipse outline, using a rectangle as the outside boundaries
+    pygame.draw.ellipse(pantalla, ROJO, [225, 10, 50, 20], 2) 
+
+    # Draw an solid ellipse, using a rectangle as the outside boundaries
+    pygame.draw.ellipse(pantalla, ROJO, [300, 10, 50, 20]) 
+ 
+    # This draws a triangle using the polygon command
+    pygame.draw.polygon(pantalla, NEGRO, [[100, 100], [0, 200], [200, 200]], 5)
+  
+    # Draw an arc as part of an ellipse. 
+    # Use radians to determine what angle to draw.
+    pygame.draw.arc(pantalla, NEGRO,[210, 75, 150, 125], 0, PI/2, 2)
+    pygame.draw.arc(pantalla, VERDE,[210, 75, 150, 125], PI/2, PI, 2)
+    pygame.draw.arc(pantalla, AZUL, [210, 75, 150, 125], PI,3*PI/2, 2)
+    pygame.draw.arc(pantalla, ROJO,  [210, 75, 150, 125], 3*PI/2, 2*PI, 2)
+    
+    # Draw a circle
+    pygame.draw.circle(pantalla, AZUL, [60, 250], 40)
      
     # --- Avanzamos y actualizamos la pantalla con lo que hemos dibujado.
     pygame.display.flip()
