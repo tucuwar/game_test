@@ -5,6 +5,8 @@
 # Importar e inicializar Pygame
 # Importa  la libraria de funciones llamada 'pygame'
 import pygame
+import math
+from math import pi
 
 
 # Definir algunos colores
@@ -63,8 +65,7 @@ while not hecho:
     ### cuándo disparar las balas y el cómo se mueven los objetos
         
     # ------FIN LOGICA DEL JUEGO-----------------------------------
- 
- 
+    
     # ------INICIO CÓDIGO DE DIBUJO--------------------------------
     # Primero, limpia la pantalla con blanco. No vayas a poner otros comandos de dibujo encima 
     # de esto, de otra forma serán borrados por este comando:
@@ -72,15 +73,26 @@ while not hecho:
 
     # Draw on the screen a VERDE line from (0,0) to (50.75) 
     # 5 pixels wide.
-    pygame.draw.line(pantalla, VERDE, [0, 0], [50,30], 20)
+    #pygame.draw.line(pantalla, VERDE, [0, 0], [50,30], 20)
 
     # Dibuja sobre la pantalla varias líneas desde (0, 10) hasta (100, 110)
     # de 5 píxeles de grosor usando un bucle for
-    for desplazar_y in range(0, 100, 10):
-        pygame.draw.line(pantalla,ROJO, [0, 10 + desplazar_y], [100, 110 + desplazar_y], 5)
-    for desplazar_x in range(100, 200, 10):
-        pygame.draw.line(pantalla,AZUL, [105, 10 + desplazar_x], [200, -90 + desplazar_x], 5)
- 
+    #for desplazar_y in range(0, 100, 10):
+    #    pygame.draw.line(pantalla,ROJO, [0, 10 + desplazar_y], [100, 110 + desplazar_y], 5)
+    #for desplazar_x in range(100, 200, 10):
+    #    pygame.draw.line(pantalla,AZUL, [105, 10 + desplazar_x], [200, -90 + desplazar_x], 5)
+    
+
+    for desplazar_y in range(0, 100, 1):
+        pygame.draw.line(pantalla,ROJO, [0, 130 + desplazar_y], [150, 0 + desplazar_y], 5)
+    for desplazar_x in range(0, 100, 1):
+        pygame.draw.line(pantalla,AZUL, [150, 0 + desplazar_x], [300, 130 + desplazar_x], 5)
+
+    # Draw a rectangle outline
+    pygame.draw.rect(pantalla, NEGRO, [0, 210, 300, 100], 5)
+    # Draw a solid rectangle
+    pygame.draw.rect(pantalla, AZUL, [130, 260, 50, 50])
+
     # Draw on the screen a VERDE line from (0,0) to (50.75) 
     # 5 pixels wide.
     #pygame.draw.lines(pantalla, NEGRO, False, [[0, 80], [50, 90], [200, 80], [220, 30]], 5)
@@ -89,11 +101,10 @@ while not hecho:
     # 5 pixels wide.
     #pygame.draw.aaline(pantalla, VERDE, [0, 50],[50, 80], True)
 
-    # Draw a rectangle outline
-    #pygame.draw.rect(pantalla, NEGRO, [75, 10, 50, 20], 2)
+    
      
-    # Draw a solid rectangle
-    #pygame.draw.rect(pantalla, AZUL, [150, 10, 50, 20])
+    
+    
      
     # Draw an ellipse outline, using a rectangle as the outside boundaries
     #pygame.draw.ellipse(pantalla, ROJO, [225, 10, 50, 20], 2) 
@@ -117,7 +128,6 @@ while not hecho:
     # --- Avanzamos y actualizamos la pantalla con lo que hemos dibujado.
     pygame.display.flip()
     
- 
     # ------FIN CÓDIGO DE DIBUJO-----------------------------------
     
     # Limita a 20 fotogramas por segundo (frames per second)
